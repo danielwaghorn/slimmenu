@@ -36,8 +36,8 @@
                 $menu_collapser;
 
             // $menu.before($collapser);
-            // $menu_collapser = $menu.prev('.menu-collapser');
-            $menu_collapser = $('.menu-collapser');
+            $menu_collapser = $menu.prev('.menu-collapser');
+            // $menu_collapser = $('.menu-collapser');
 
             $menu.on('click', '.sub-collapser', function(e)
             {
@@ -60,7 +60,13 @@
                 }
             });
 
-            $menu_collapser.on('click', '.collapse-button', function(e)
+            /* $menu_collapser.on('click', '.collapse-button', function(e)
+            {
+                e.preventDefault();
+                $menu.slideToggle($options.animSpeed, $options.easingEffect);
+            }); */
+
+            $(document).on('click', '.collapse-button', function(e)
             {
                 e.preventDefault();
                 $menu.slideToggle($options.animSpeed, $options.easingEffect);
