@@ -4,6 +4,8 @@ var gulp = require('gulp');
 // var coffee = require('gulp-coffee'); 
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
+var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('default', ['js', 'css']);
 
