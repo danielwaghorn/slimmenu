@@ -7,7 +7,7 @@
  */
 ;(function ( $, window, document, undefined )
 {
-    var pluginName = "slimmenu",
+    var pluginName = 'slimmenu',
         defaults =
         {
             resizeWidth: '768',
@@ -32,7 +32,7 @@
         {
             var $options = this.options,
                 $menu = this.$elem,
-                $collapser = '<div class="menu-collapser">'+$options.collapserTitle+'<div class="collapse-button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div></div>',
+                $collapser = '<div class='menu-collapser'>'+$options.collapserTitle+'<div class='collapse-button'><span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span></div></div>',
                 $menu_collapser;
 
             // $menu.before($collapser);
@@ -68,6 +68,11 @@
 
             $(document).on('click', '.collapse-button', function(e)
             {
+                if($(this).hasClass('active')){
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
                 e.preventDefault();
                 $menu.slideToggle($options.animSpeed, $options.easingEffect);
             });
@@ -93,7 +98,7 @@
                     }
                     else
                     {
-                        $(this).append('<span class="sub-collapser"><i>&#9660;</i></span>');
+                        $(this).append('<span class='sub-collapser'><i>&#9660;</i></span>');
                     }
                 }
 
@@ -151,9 +156,9 @@
     {
         return this.each(function ()
         {
-            if (!$.data(this, "plugin_" + pluginName))
+            if (!$.data(this, 'plugin_' + pluginName))
             {
-                $.data(this, "plugin_" + pluginName,
+                $.data(this, 'plugin_' + pluginName,
                 new Plugin( this, options ));
             }
         });
